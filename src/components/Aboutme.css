@@ -1,0 +1,50 @@
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to start (left-aligned) */
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adjust heading alignment */
+.about-heading {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center; /* Center text */
+    width: 100%; /* Ensure it spans full width */
+    display: block; /* Make sure it's block-level */
+    position: relative; /* Keep relative for underline */
+    margin: 0 auto 20px; /* Center with margin */
+}
+
+
+
+/* Adjust text alignment */
+.about-text {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: center;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Center Download Button */
+.download-button {
+    display: block;
+    margin: 20px auto 0; /* Center button horizontally */
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2.5px solid #F26464;
+    background: transparent;
+    color: #F26464;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: #F26464;
+    color: white;
+}

@@ -1,0 +1,98 @@
+.education-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+}
+
+.education-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edu-year {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.edu-logo-container {
+    width: 100px;  /* Fixed width */
+    height: 100px; /* Fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white; /* Optional: Keeps background consistent */
+    border-radius: 5px; /* Optional: Rounds corners slightly */
+    overflow: hidden; /* Ensures nothing spills out */
+}
+
+.edu-logo {
+    max-width: 100%;  /* Ensures image doesn't exceed container */
+    max-height: 100%; /* Ensures image doesn't exceed container */
+    object-fit: contain; /* Maintains aspect ratio */
+}
+
+
+.edu-institution {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000 !important;  /* Keeps it black in both light and dark mode */
+}
+
+.dark-mode .edu-institution {
+    color: #000 !important; /* Forces it to stay black in dark mode */
+}
+
+
+.edu-degree {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+.edu-location {
+    font-size: 14px;
+    color: #666;
+}
+
+.edu-extra {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.coursework h6 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #000 !important;
+}
+
+.coursework ul {
+    padding-left: 20px;
+}
+
+.coursework li {
+    font-size: 14px;
+    color: #444;
+}
+
+.transcript-link {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.transcript-link:hover {
+    text-decoration: underline;
+}

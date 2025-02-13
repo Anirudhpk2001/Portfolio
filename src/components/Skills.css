@@ -1,0 +1,50 @@
+.skills-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.skills-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 50px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Skill Item */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Skill Icons */
+.skill-icon {
+  width: 80px; /* Adjust size */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.skill-item p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.skills-title .underline {
+  width: 100%; /* Only as wide as "ABOUT ME" */
+  height: 4px;
+  background-color: #ffad99;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}

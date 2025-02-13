@@ -1,0 +1,109 @@
+
+
+.navbar-light {
+  background-color: var(--background-light) !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link-text-light {
+  color: var(--text-light) !important;
+}
+
+.brand-text-light {
+  color: var(--text-light) !important;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.navbar-dark {
+  background-color: var(--background-dark) !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link-text-dark {
+  color: var(--text-dark) !important;
+}
+
+.brand-text-dark {
+  color: var(--text-dark) !important;
+}
+
+/* Toggle Button Styles */
+.toggle-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background: transparent; /* No background change */
+  transition: color 0.3s ease-in-out;
+}
+
+
+.toggle-button i {
+  font-size: 1.2rem;
+}
+
+
+/* Add Padding to Navbar Brand */
+.navbar-brand {
+  padding: 10px 15px; /* Adds padding around brand */
+  font-size: 1.75rem; 
+}
+.custom-navbar {
+  position: fixed;  /* Ensures the navbar remains fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: white; /* Ensures navbar remains visible */
+  transition: all 0.3s ease-in-out;
+  padding: 15px 20px; /* Adjust top-bottom and left-right padding */
+  height: 80px; /* Increase height */
+}
+
+/* Shadow effect when scrolling */
+.navbar-shadow {
+  box-shadow: 0px 6px 10px var(--shadow-light); /* Use CSS variable */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.dark-mode .navbar-shadow {
+  box-shadow: 0px 6px 10px var(--shadow-dark); /* Change shadow in dark mode */
+}
+
+.navbar-logo {
+  height: 40px; /* Adjust as needed */
+  width: auto;
+  margin-right: 10px;
+}
+
+.navbar-brand-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-brand-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-component-logo {
+  height: 30px; /* Reduce height */
+  width: 30px; /* Reduce width */
+  margin-right: 5px; /* Reduce margin */
+  cursor: pointer; /* Make them clickable */
+}
+
+.navbar-component-logo:hover {
+  opacity: 0.8;
+  transform: scale(1.1); /* Slight zoom effect */
+  transition: all 0.2s ease-in-out;
+}
