@@ -67,7 +67,7 @@ const experiences = [
 export default function ExperienceTimeline() {
   return (
     <Container className="py-5">
-      <h2 className="text-center mb-1">Experience</h2>
+      <h2 className="text-center mb-1">EXPERIENCES</h2>
       <div className="timeline">
         {experiences.map((exp, index) => (
           <div key={index} className="timeline-item">

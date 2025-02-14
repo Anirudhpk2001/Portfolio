@@ -6,6 +6,8 @@ import AboutMe from "./components/Aboutme";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import Footer from "./components/Footer";
+import Project from "./components/Project";
 import { Element } from "react-scroll";
 
 function App() {
@@ -36,10 +38,10 @@ function App() {
       </Element>
       <Element name="projects">
         <section id="projects">
-          <h2>Projects</h2>
-          <p>Coming soon...</p>
+          <Project/>
         </section>
       </Element>
+      <Footer/>
     </>
   );
 }

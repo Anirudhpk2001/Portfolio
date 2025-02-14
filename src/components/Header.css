@@ -54,6 +54,7 @@ body.dark-mode {
 .navbar-brand {
   padding: 10px 15px; /* Adds padding around brand */
   font-size: 1.75rem; 
+  
 }
 .custom-navbar {
   position: fixed;  /* Ensures the navbar remains fixed */

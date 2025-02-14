@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+
+
 .about-me-container {
     display: flex;
     flex-direction: column;
@@ -17,6 +22,8 @@
     display: block; /* Make sure it's block-level */
     position: relative; /* Keep relative for underline */
     margin: 0 auto 20px; /* Center with margin */
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 

@@ -13,11 +13,18 @@ const AboutMe = ({ darkMode }) => {
     return () => clearInterval(interval);
   }, []);
 
+  // Function to handle resume download
+  const handleDownloadResume = () => {
+    window.open(
+      "https://drive.google.com/file/d/10tQ849D49y-nT8igCc3EIT40G7_y22PC/view?usp=sharing",
+      "_blank"
+    );
+  };
+
   return (
     <div className="about-me-container">
       <h2 className={`about-heading ${darkMode ? "dark-mode-text" : ""}`}>
         ABOUT ME
-        
       </h2>
 
       <p className={`about-text ${darkMode ? "dark-mode-text" : ""}`}>
@@ -31,7 +38,9 @@ const AboutMe = ({ darkMode }) => {
         technologies like AWS and GCP.<span>{dots}</span>
       </p>
 
-      <button className="download-button">DOWNLOAD RESUME</button>
+      <button className="download-button" onClick={handleDownloadResume}>
+        DOWNLOAD RESUME
+      </button>
     </div>
   );
 };

@@ -14,8 +14,9 @@ const Hero = () => {
 
         {/* Right Side - Text */}
         <div className="hero-text">
+        <h1>Hi,</h1>
           <h1>I'm Anirudh Prashant Kalghatkar</h1>
-          <h2>
+          <h2> 
             <TypingEffect
               text={[
                 "Software Developer.",
