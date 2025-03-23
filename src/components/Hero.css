@@ -21,16 +21,26 @@
   
   .hero-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    max-width: 1100px;
+    max-width: 900px;
     width: 100%;
+    text-align: center;
+    gap: 20px;
   }
   
   .hero-image img {
-    width: 350px;
-    height: auto;
-    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid #000;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-image.dark-mode{
+    border: 5px solid white;
+    box-shadow: 5px 5px 15px white;
   }
   
   .hero-text {
@@ -52,3 +62,12 @@
     color: #ffffff;
   }
   
+  @media (max-width: 768px) {
+    .hero-container {
+      flex-direction: column;
+    }
+  
+    .hero-text {
+      text-align: center;
+    }
+  }

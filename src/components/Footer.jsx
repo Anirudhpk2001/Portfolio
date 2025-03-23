@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Footer.css"; // Import CSS
 
 // Import logos (Ensure paths are correct)
-import githubLogo from "../assets/images/github-logo.svg"; // Default logo
+import githubLogo from "../assets/images/github.gif"; // Default logo
 import githubHover from "../assets/images/github-hover.svg"; // Hover logo
 
 import linkedinLogo from "../assets/images/linkedin-logo.svg";
@@ -58,20 +58,20 @@ const Footer = () => {
       <div className="social-icons">
         {/* GitHub */}
         <a href="https://github.com/Anirudhpk2001" target="_blank" rel="noopener noreferrer">
-          <img src={githubLogo} alt="GitHub" className="default" />
-          <img src={githubHover} alt="GitHub Hover" className="hover" />
+          <img src={githubHover} alt="GitHub" className="default" />
+          <img src={githubLogo} alt="GitHub Hover" className="hover" />
         </a>
 
         {/* LinkedIn */}
         <a href="https://www.linkedin.com/in/anirudhkalghatkar/" target="_blank" rel="noopener noreferrer">
-          <img src={linkedinLogo} alt="LinkedIn" className="default" />
-          <img src={linkedinHover} alt="LinkedIn Hover" className="hover" />
+          <img src={linkedinHover} alt="LinkedIn" className="default" />
+          <img src={linkedinLogo} alt="LinkedIn Hover" className="hover" />
         </a>
 
         {/* LeetCode */}
         <a href="https://leetcode.com/u/Anirudhk_2001/" target="_blank" rel="noopener noreferrer">
-          <img src={leetcodeLogo} alt="LeetCode" className="default" />
-          <img src={leetcodeHover} alt="LeetCode Hover" className="hover" />
+          <img src={leetcodeHover} alt="LeetCode" className="default" />
+          <img src={leetcodeLogo} alt="LeetCode Hover" className="hover" />
         </a>
       </div>
 

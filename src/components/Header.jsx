@@ -156,7 +156,7 @@ function Header() {
             ) : (
               <Moon size={20} color="#000000" />
             )}
-            <span>{darkMode ? " Light Mode" : " Dark Mode"}</span>
+            {/* <span>{darkMode ? " Light Mode" : " Dark Mode"}</span> */}
           </button>
         </Container>
       </Navbar>

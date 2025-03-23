@@ -1,6 +1,3 @@
-
-
-
 footer {
   text-align: center;
   padding: 20px;
@@ -39,21 +36,15 @@ footer .contact-btn:hover {
 }
 
 /* Light Mode (Default) */
-footer.default {
+footer {
   background-color: black;
   color: white;
 }
 
-/* Dark Mode (When Scrolled to Bottom) */
-footer.dark-bottom {
+/* Dark Mode (Toggled with Button) */
+body.dark-mode footer {
   background-color: white;
   color: black;
-}
-
-/* Light Mode (When Scrolled to Bottom) */
-footer.light-bottom {
-  background-color: black;
-  color: white;
 }
 
 /* Social Media Icons */
