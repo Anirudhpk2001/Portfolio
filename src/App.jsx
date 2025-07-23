@@ -20,7 +20,7 @@ function App() {
       <Element name="about">
         <AboutMe />
       </Element>
-      {/* Add other sections here when ready */}
+      
       <Element name="education">
        
           <Education/>
