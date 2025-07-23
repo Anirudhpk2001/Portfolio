@@ -2,10 +2,6 @@ import React from "react";
 import { Container, Card, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Experience.css";
-import rplaceLogo from "../assets/images/R Place Logo V1.png";
-import unboxmeLogo from "../assets/images/unboxme.jpg";
-import cuBoulderLogo from "../assets/images/uc boulder logo.png";
-import isroLogo from "../assets/images/isro.png";
 
 
 const experiences = [
@@ -19,7 +15,7 @@ const experiences = [
       "Developed and deployed an initial React + Vite landing page on Netlify, achieving 99.9% uptime and optimizing load times by 50%.",
       "Collaborating across technical and business teams to refine the product vision and drive market strategy.",
     ],
-    logo: rplaceLogo,
+    logo: "/assets/images/R Place Logo V1.png",
   },
   {
     company: "UnboxMe",
@@ -33,7 +29,7 @@ const experiences = [
         "Developed a PostgreSQL database schema, reducing query latency and improving data processing efficiency by 40%. ",
         "Integrated OpenAI API with advanced prompt engineering, generating AI-powered recommendations that increased product sales by $254,000." 
     ],
-    logo: unboxmeLogo,
+    logo: "/assets/images/unboxme.jpg",
   },
   {
     company: "University of Colorado Boulder",
@@ -46,7 +42,7 @@ const experiences = [
       "Designed and graded 10+ hands-on assignments on TCP/IP protocols, packet sniffing (Wireshark, Tshark), and penetration testing, increasing student engagement by 30%.",
       "Mentored students in debugging scripts and troubleshooting network vulnerabilities, resolving 95% of reported issues and reinforcing expertise in Python, networking, and security tools. ",
     ],
-    logo: cuBoulderLogo,
+    logo: "/assets/images/uc boulder logo.png",
   },
   {
     company: "Indian Space Research Organization (ISRO)",
@@ -60,7 +56,7 @@ const experiences = [
         "Visualized complex datasets with Matplotlib, delivering actionable insights that improved strategic planning and research outcomes.",
         "Implemented a Collaborative Filtering and Content-Based Recommendation System using K-means clustering, increasing user engagement by 60% and scaling average traffic from 100 to 3,000 users." ,
     ],
-    logo: isroLogo,
+    logo: "/assets/images/isro.png",
   },
 ];
 

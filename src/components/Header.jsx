@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Sun, Moon } from "react-bootstrap-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../assets/images/A.png";
-import projectLogo from "../assets/images/project.gif";
-import educationLogo from "../assets/images/education.gif";
-import experienceLogo from "../assets/images/experience.svg";
-import aboutLogo from "../assets/images/about.gif";
-import skillsLogo from "../assets/images/icons8-skills.gif";
 import "./Header.css";
 
 function Header() {
@@ -49,7 +42,7 @@ function Header() {
             duration={500}
             className="navbar-brand-container"
           >
-            <img src={logo} alt="Logo" className="navbar-logo" />
+            <img src="/assets/images/A.png" alt="Logo" className="navbar-logo" />
             <span
               className={`navbar-brand-name ${
                 darkMode ? "brand-text-dark" : "brand-text-light"
@@ -83,7 +76,7 @@ function Header() {
                   className="nav-link"
                 >
                   <img
-                    src={aboutLogo}
+                    src="/assets/images/about.gif"
                     alt="About Logo"
                     className="navbar-component-logo"
                   />
@@ -96,7 +89,7 @@ function Header() {
                   className="nav-link"
                 >
                   <img
-                    src={educationLogo}
+                    src="/assets/images/education.gif"
                     alt="Education Logo"
                     className="navbar-component-logo"
                   />
@@ -109,7 +102,7 @@ function Header() {
                   className="nav-link"
                 >
                   <img
-                    src={skillsLogo}
+                    src="/assets/images/icons8-skills.gif"
                     alt="Skills Logo"
                     className="navbar-component-logo"
                   />
@@ -122,7 +115,7 @@ function Header() {
                   className="nav-link"
                 >
                   <img
-                    src={experienceLogo}
+                    src="/assets/images/experience.svg"
                     alt="Experience Logo"
                     className="navbar-component-logo"
                   />
@@ -135,7 +128,7 @@ function Header() {
                   className="nav-link"
                 >
                   <img
-                    src={projectLogo}
+                    src="/assets/images/project.gif"
                     alt="Project Logo"
                     className="navbar-component-logo"
                   />

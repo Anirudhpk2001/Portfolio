@@ -1,5 +1,4 @@
-import CrytpImage from "../assets/images/Capture.png";
-import CrytpoTmage2 from "../assets/images/Capture1.png";
+
 
 export const projectsData = [
   {
@@ -47,7 +46,7 @@ export const projectsData = [
       Education: The website can be used as a learning tool for those who are new to cryptocurrency and want to understand the market better.
       Trading: The prediction model can be used by traders to make profitable trades by anticipating price changes in the market.
       Risk management: The model can help investors minimize their risks by providing insight into market trends and potential price changes.`,
-    images: [CrytpImage, CrytpoTmage2],
+    images: ["/assets/images/Capture.png", "/assets/images/Capture1.png"],
     technologies: [
       "Machine Learning",
       "React.js",

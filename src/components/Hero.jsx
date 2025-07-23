@@ -2,14 +2,14 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TypingEffect from "react-typing-effect";
 import "./Hero.css"; 
-import profileImage from "../assets/images/anirudh.jpg"; 
+
 
 const Hero = () => {
   return (
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-image">
-          <img src={profileImage} alt="Anirudh Prashant Kalghatkar" />
+          <img src="/assets/images/anirudh.jpg" alt="Anirudh Prashant Kalghatkar" />
         </div>
 
         {/* Right Side - Text */}

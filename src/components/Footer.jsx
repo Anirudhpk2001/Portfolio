@@ -1,16 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Footer.css"; // Import CSS
 
-// Import logos (Ensure paths are correct)
-import githubLogo from "../assets/images/github.gif"; // Default logo
-import githubHover from "../assets/images/github-hover.svg"; // Hover logo
-
-import linkedinLogo from "../assets/images/linkedin-logo.svg";
-import linkedinHover from "../assets/images/linkedin-hover.svg";
-
-import leetcodeLogo from "../assets/images/leetcode.svg";
-import leetcodeHover from "../assets/images/leetcode-hover.svg";
-
 const Footer = () => {
   const [isBottom, setIsBottom] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
@@ -58,20 +48,20 @@ const Footer = () => {
       <div className="social-icons">
         {/* GitHub */}
         <a href="https://github.com/Anirudhpk2001" target="_blank" rel="noopener noreferrer">
-          <img src={githubHover} alt="GitHub" className="default" />
-          <img src={githubLogo} alt="GitHub Hover" className="hover" />
+          <img src="/assets/images/github-hover.svg" alt="GitHub" className="default" />
+          <img src="/assets/images/github.gif" alt="GitHub Hover" className="hover" />
         </a>
 
         {/* LinkedIn */}
         <a href="https://www.linkedin.com/in/anirudhkalghatkar/" target="_blank" rel="noopener noreferrer">
-          <img src={linkedinHover} alt="LinkedIn" className="default" />
-          <img src={linkedinLogo} alt="LinkedIn Hover" className="hover" />
+          <img src="/assets/images/linkedin-hover.svg" alt="LinkedIn" className="default" />
+          <img src="/assets/images/linkedin-logo.svg" alt="LinkedIn Hover" className="hover" />
         </a>
 
         {/* LeetCode */}
         <a href="https://leetcode.com/u/Anirudhk_2001/" target="_blank" rel="noopener noreferrer">
-          <img src={leetcodeHover} alt="LeetCode" className="default" />
-          <img src={leetcodeLogo} alt="LeetCode Hover" className="hover" />
+          <img src="/assets/images/leetcode-hover.svg" alt="LeetCode" className="default" />
+          <img src="/assets/images/leetcode.svg" alt="LeetCode Hover" className="hover" />
         </a>
       </div>
 

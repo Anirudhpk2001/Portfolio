@@ -1,16 +1,11 @@
 import React from "react";
 import "./Education.css";
 
-// Import logos
-import cuBoulderLogo from "../assets/images/uc boulder logo.png";
-import dayanandaLogo from "../assets/images/dsi_en.png";
-import alvasLogo from "../assets/images/alvas.png";
-import amritaLogo from "../assets/images/Amrita-Vidyalayam-Belgaum.png";
 
 const educationData = [
     {
       year: "Aug 2023 - Present",
-      logo: cuBoulderLogo,
+      logo: "/assets/images/uc boulder logo.png",
       institution: "University of Colorado Boulder",
       degree: "Master's in Computer Science",
       location: "Boulder, Colorado, USA",
@@ -25,7 +20,7 @@ const educationData = [
     },
     {
       year: "Aug 2019 - May 2023",
-      logo: dayanandaLogo,
+      logo: "/assets/images/dsi_en.png",
       institution: "Dayananda Sagar College Of Engineering",
       degree: "Bachelor of Engineering, Computer Science and Engineering",
       location: "VTU University, Bengaluru, Karnataka, India.",
@@ -40,7 +35,7 @@ const educationData = [
     },
     {
       year: "Aug 2017 - May 2019",
-      logo: alvasLogo,
+      logo: "/assets/images/alvas.png",
       institution: "Alva's PU College",
       degree: "PCME - 12th Grade",
       location: "Moodubidre, Karnataka, India.",
@@ -55,7 +50,7 @@ const educationData = [
     },
     {
       year: "2011-2017",
-      logo: amritaLogo,
+      logo: "/assets/images/Amrita-Vidyalayam-Belgaum.png",
       institution: "Amrita Vidyalayam School",
       degree: "10th Grade",
       location: "Belagavi, Karnataka, India.",
