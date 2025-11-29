@@ -2,6 +2,61 @@
 
 export const projectsData = [
   {
+  title: "Music-Separation-as-a-Service (MSaaS)",
+  shortDescription: [
+    "Developed a Kubernetes-based microservices platform that performs automatic audio source separation using Demucs.",
+    "Designed scalable REST APIs, worker pipelines, Redis task queues, and MinIO storage on top of a production-grade GKE cluster."
+  ],
+  fullDescription: `Music-Separation-as-a-Service (MSaaS) is a fully containerized, Kubernetes-orchestrated platform that allows users to upload MP3 files and automatically separate vocals, drums, bass, and other stems. I designed the entire architecture around high scalability, efficient computation, and cloud-native deployment principles.
+
+The system consists of four main microservices: a Flask REST API, Redis for task brokering, Demucs-powered worker nodes for audio separation, and MinIO for object storage. Incoming MP3 files are uploaded via the API, queued in Redis, and processed by distributed worker nodes running Demucs. The workers store separated tracks back into MinIO buckets for retrieval.
+
+I deployed the platform using Google Kubernetes Engine (GKE), leveraging Kubernetes for autoscaling, resiliency, and clean service isolation. During development, I relied on Docker and port-forwarding to simulate the cluster locally. Each service was containerized with versioned Docker images, allowing easy rollbacks and CI/CD integration.
+
+I optimized compute resources to handle the memory-intensive Demucs model, added logging pipelines via Redis, and tested the system using real audio samples. This project demonstrated my ability to design and deploy complex distributed architectures, manage cloud infrastructure, and integrate advanced machine learning workloads into production-ready microservice systems.`,
+  images: [],
+  technologies: [
+    "Kubernetes",
+    "GKE",
+    "Docker",
+    "Flask",
+    "Python",
+    "Redis",
+    "MinIO",
+    "Demucs",
+    "Microservices",
+    "Cloud Native"
+  ],
+  link: "https://github.com/your-repo-here"
+}
+,
+  {
+  title: "Multimodal RAG Search Agent",
+  shortDescription: [
+    "Designed an end-to-end multimodal Retrieval-Augmented Generation (RAG) system capable of ingesting URLs, files, text, and images for vector-based semantic search.",
+    "Built modular AI agent workflows using LangChain, LangGraph, and OpenAI embeddings with ChromaDB acting as the vector store."
+  ],
+  fullDescription: `I developed a Multimodal RAG Search Agent that enables intelligent search across text, images, documents, and URLs using vector embeddings. The goal of this project was to build a highly modular, pluggable RAG pipeline that supports different modalities and can be extended into larger agentic workflows.
+
+Using OpenAI’s embedding models, LangChain, and LangGraph, I implemented a processing pipeline where input data—such as PDFs, URLs, plain text, and even images—is pre-processed, chunked, embedded, and stored inside ChromaDB. I designed the workflow so each step (ingestion, splitting, embedding, retrieval, reasoning) is independently orchestrated, making it easy to extend into a system like Temporal for production-grade workflows.
+
+The system supports semantic search across multiple modalities, meaning users can perform natural language queries and retrieve contextually relevant matches regardless of input type. LangGraph allowed me to organize the entire pipeline into stateful, observable agent nodes, improving both transparency and debugging.
+
+Building this project strengthened my understanding of RAG architectures, embedding pipelines, multimodal search, and agent-style orchestration—key foundations for scalable AI systems.`,
+  images: [],
+  technologies: [
+    "OpenAI",
+    "Python",
+    "LangChain",
+    "LangGraph",
+    "ChromaDB",
+    "Vector Search",
+    "RAG"
+  ],
+  link: "https://github.com/your-repo-here"
+}
+,
+  {
     title: "Trail Explorer",
     shortDescription: [
       "Trail Explorers is a platform designed for outdoor enthusiasts, offering real-time weather forecasts, detailed trail information, and insights on various activities.",

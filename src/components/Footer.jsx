@@ -26,7 +26,7 @@ const Footer = () => {
 
   // Function to open email client
   const handleEmailClick = () => {
-    window.location.href = "mailto:anka5129@colorado.edu";
+    window.location.href = "mailto:anirudhprashantkalghatkar@gmail.com";
   };
 
   return (

@@ -6,28 +6,47 @@ import "./Experience.css";
 
 const experiences = [
   {
-    company: "RPlace",
-    role: "Tech Lead",
-    duration: "January 2024 - Present",
-    location: "Boulder, CO",
-    skills: ["Full Stack","React", "Vite", "Netlify", "Business Strategy"],
-    description: [
-      "Developed and deployed an initial React + Vite landing page on Netlify, achieving 99.9% uptime and optimizing load times by 50%.",
-      "Collaborating across technical and business teams to refine the product vision and drive market strategy.",
-    ],
-    logo: "/assets/images/R Place Logo V1.png",
-  },
+  "company": "MyMech",
+  "role": "Founding Software Engineer",
+  "duration": "July 2025 - Present",
+  "location": "Remote",
+  "skills": ["FastAPI", "Python", "Vector Databases", "Vertex AI", "Firestore", "Docker", "Microservices", "System Design"],
+  "description": [
+    "Designed and implemented a scalable document ingestion pipeline using FastAPI, Firestore, and Vertex AI embeddings, supporting PDF parsing, deduplication, and semantic search.",
+    "Built a custom vector database layer on top of Google Firestore with batching, hash-based deduplication, semantic similarity checks, and optimized query traversal.",
+    "Developed microservices for file upload, PDF processing, text chunking, and background task orchestration, ensuring reliability for large documents (50MB+).",
+    "Containerized services using Docker, improving developer workflow and enabling seamless deployment to cloud environments.",
+    "Led end-to-end system architecture decisions, covering data modeling, API design, real-time monitoring, and long-running job handling."
+  ],
+  "logo": "/assets/images/themymech_logo.jpeg"
+},
+{
+  "company": "LearnLocal",
+  "role": "Full Stack Developer",
+  "duration": "January 2025 - July 2025",
+  "location": "Boulder, CO",
+  "skills": ["React", "Node.js", "Express", "Supabase", "PostgreSQL", "Auth", "Product Development"],
+  "description": [
+    "Built core platform features enabling instructors to create and publish local skill-based classes, integrating authentication, scheduling, and class management.",
+    "Developed a Supabase-backed authentication system and user profile experience for instructors and learners, improving onboarding flow by 40%.",
+    "Implemented end-to-end API routes using Express and PostgreSQL for class discovery, user favorites, and real-time updates.",
+    "Collaborated with the founding team to refine user flows, improve UI/UX, and iterate quickly based on instructor feedback.",
+    "Shipped multiple production-ready features with a focus on speed, usability, and clean frontend-backend integration."
+  ],
+  "logo": "/assets/images/learn_local_logo.jpeg"
+}
+,
   {
     company: "UnboxMe",
     role: "Software Developer",
-    duration: "August 2024 - Present",
+    duration: "August 2024 - May 2025",
     location: "Boulder, CO",
     skills: ["ReactJS", "Django", "PostgreSQL", "OpenAI API"],
     description: [
         "Engineered an Amazon Image Optimization web app, boosting product visibility and increasing user engagement by 15% through strategic keyword ranking.",
         "Designed and deployed scalable REST APIs, optimizing data retrieval and enhancing system performance by 30%.",
         "Developed a PostgreSQL database schema, reducing query latency and improving data processing efficiency by 40%. ",
-        "Integrated OpenAI API with advanced prompt engineering, generating AI-powered recommendations that increased product sales by $254,000." 
+        "Integrated OpenAI API with advanced prompt engineering, generating AI-powered recommendations that increased product conversion rates by 25% and sales by 15%.", 
     ],
     logo: "/assets/images/unboxme.jpg",
   },

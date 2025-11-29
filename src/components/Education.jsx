@@ -4,7 +4,7 @@ import "./Education.css";
 
 const educationData = [
     {
-      year: "Aug 2023 - Present",
+      year: "Aug 2023 - May 2025",
       logo: "/assets/images/uc boulder logo.png",
       institution: "University of Colorado Boulder",
       degree: "Master's in Computer Science",
