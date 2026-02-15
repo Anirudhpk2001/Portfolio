@@ -1,159 +1,150 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import { Sun, Moon } from "react-bootstrap-icons";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Header.css";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
+import { motion, AnimatePresence } from 'framer-motion';
+import './Header.css';
+
+const navLinks = [
+  { to: 'about', label: 'About' },
+  { to: 'experience', label: 'Experience' },
+  { to: 'projects', label: 'Projects' },
+  { to: 'skills', label: 'Skills' },
+  { to: 'education', label: 'Education' },
+];
 
 function Header() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // dark-first
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle('light-mode');
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+  // Close mobile menu on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) setMobileOpen(false);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
-    <>
-      <Navbar
-        expand="xxl"
-        className={`custom-navbar ${
-          darkMode ? "navbar-dark" : "navbar-light"
-        } ${isScrolled ? "navbar-shadow" : ""}`}
-      >
-        <Container fluid>
-          {/* ✅ Clickable Logo & Name - Scrolls to Top */}
-          <Link
-            to="hero"
-            smooth={true}
-            duration={500}
-            className="navbar-brand-container"
-          >
-            <img src="/assets/images/A.png" alt="Logo" className="navbar-logo" />
-            <span
-              className={`navbar-brand-name ${
-                darkMode ? "brand-text-dark" : "brand-text-light"
-              }`}
+    <motion.nav
+      className={`nav ${isScrolled ? 'nav--scrolled' : ''}`}
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <div className="nav__inner">
+        <Link
+          to="hero"
+          smooth={true}
+          duration={500}
+          className="nav__brand"
+        >
+          <img src="/assets/images/A.png" alt="Logo" className="nav__logo" />
+          <span className="nav__name">Anirudh Kalghatkar</span>
+        </Link>
+
+        {/* Desktop links */}
+        <div className="nav__links">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              smooth={true}
+              duration={500}
+              offset={-80}
+              spy={true}
+              activeClass="nav__link--active"
+              className="nav__link"
             >
-              ANIRUDH PRASHANT KALGHATKAR
-            </span>
-          </Link>
+              {link.label}
+            </Link>
+          ))}
+        </div>
 
-          <Navbar.Toggle aria-controls="offcanvasNavbar" />
-          <Navbar.Offcanvas id="offcanvasNavbar" placement="end">
-            <Offcanvas.Header closeButton>
-              <Link
-                to="hero"
-                smooth={true}
-                duration={10}
-                className={`offcanvas-title ${
-                  darkMode ? "brand-text-dark" : "brand-text-light"
-                }`}
-                style={{ cursor: "pointer" }}
-              >
-                ANIRUDH PRASHANT KALGHATKAR
-              </Link>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Link
-                  to="about"
-                  smooth={true}
-                  duration={10}
-                  className="nav-link"
-                >
-                  <img
-                    src="/assets/images/about.gif"
-                    alt="About Logo"
-                    className="navbar-component-logo"
-                  />
-                  About Me
-                </Link>
-                <Link
-                  to="education"
-                  smooth={true}
-                  duration={10}
-                  className="nav-link"
-                >
-                  <img
-                    src="/assets/images/education.gif"
-                    alt="Education Logo"
-                    className="navbar-component-logo"
-                  />
-                  Education
-                </Link>
-                <Link
-                  to="skills"
-                  smooth={true}
-                  duration={10}
-                  className="nav-link"
-                >
-                  <img
-                    src="/assets/images/icons8-skills.gif"
-                    alt="Skills Logo"
-                    className="navbar-component-logo"
-                  />
-                  Skills
-                </Link>
-                <Link
-                  to="experience"
-                  smooth={true}
-                  duration={10}
-                  className="nav-link"
-                >
-                  <img
-                    src="/assets/images/experience.svg"
-                    alt="Experience Logo"
-                    className="navbar-component-logo"
-                  />
-                  Experience
-                </Link>
-                <Link
-                  to="projects"
-                  smooth={true}
-                  duration={10}
-                  className="nav-link"
-                >
-                  <img
-                    src="/assets/images/project.gif"
-                    alt="Project Logo"
-                    className="navbar-component-logo"
-                  />
-                  Projects
-                </Link>
-              </Nav>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
-
-          {/* Dark Mode Toggle */}
+        <div className="nav__actions">
+          {/* Dark/Light toggle */}
           <button
             onClick={toggleDarkMode}
-            className="toggle-button"
-            style={{ color: darkMode ? "#FFA500" : "#000000" }}
+            className="nav__toggle-theme"
+            aria-label="Toggle theme"
           >
-            {darkMode ? (
-              <Sun size={20} color="#FFA500" />
-            ) : (
-              <Moon size={20} color="#000000" />
-            )}
-            {/* <span>{darkMode ? " Light Mode" : " Dark Mode"}</span> */}
+            <motion.div
+              key={darkMode ? 'moon' : 'sun'}
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {darkMode ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="5" />
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              )}
+            </motion.div>
           </button>
-        </Container>
-      </Navbar>
-    </>
+
+          {/* Mobile hamburger */}
+          <button
+            className={`nav__hamburger ${mobileOpen ? 'nav__hamburger--open' : ''}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            className="nav__mobile"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            {navLinks.map((link, i) => (
+              <motion.div
+                key={link.to}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05 }}
+              >
+                <Link
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  className="nav__mobile-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 }
 

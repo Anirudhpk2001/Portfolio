@@ -1,16 +1,35 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import AboutMe from "./components/Aboutme";
-import Skills from "./components/Skills";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
-import Footer from "./components/Footer";
-import Project from "./components/Project";
-import { Element } from "react-scroll";
+import './App.css';
+import { useEffect } from 'react';
+import Lenis from 'lenis';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import AboutMe from './components/Aboutme';
+import Skills from './components/Skills';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import Footer from './components/Footer';
+import Project from './components/Project';
+import { Element } from 'react-scroll';
 
 function App() {
+  // Initialize Lenis smooth scrolling
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      smoothWheel: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
+
   return (
     <>
       <Header />
@@ -20,28 +39,19 @@ function App() {
       <Element name="about">
         <AboutMe />
       </Element>
-      
-      <Element name="education">
-       
-          <Education/>
-        
-      </Element>
-      <Element name="skills">
-        
-        <Skills/>
-        
-      </Element>
       <Element name="experience">
-        <section id="experience">
-          <Experience/>
-        </section>
+        <Experience />
       </Element>
       <Element name="projects">
-        <section id="projects">
-          <Project/>
-        </section>
+        <Project />
       </Element>
-      <Footer/>
+      <Element name="skills">
+        <Skills />
+      </Element>
+      <Element name="education">
+        <Education />
+      </Element>
+      <Footer />
     </>
   );
 }

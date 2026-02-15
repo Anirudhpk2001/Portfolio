@@ -1,59 +1,178 @@
-/* Apply the custom font to the h2 element */
-h2.text-center.mb-1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 28px; /* Adjust size if needed */
-    font-weight: 700; /* Bold */
-    text-align: center; /* Ensures centering */
-    margin-bottom: 10px; /* Adjust margin */
-  }
-  
-.timeline {
+/* ===== EXPERIENCE TIMELINE ===== */
+.exp__timeline {
     position: relative;
-    margin: 20px 0;
-    padding-left: 40px;
-    border-left: 4px solid #007bff;
+    padding-left: var(--space-10);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.timeline-item {
-    margin-bottom: 30px;
-    position: relative;
-    padding-left: 20px; 
-}
-
-
-.timeline-item::before {
-    content: "";
+.exp__line {
     position: absolute;
-    left: -10px; 
-    top: 15px;
-    width: 12px;
-    height: 12px;
-    background-color: black; 
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg,
+            var(--color-accent-cyan) 0%,
+            var(--color-accent-violet) 50%,
+            transparent 100%);
+}
+
+/* Item */
+.exp__item {
+    position: relative;
+    margin-bottom: var(--space-8);
+    cursor: pointer;
+}
+
+.exp__dot {
+    position: absolute;
+    left: calc(-1 * var(--space-10) + 6px);
+    top: var(--space-6);
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-accent-cyan);
+    z-index: 1;
+    transition: all var(--duration-normal) var(--ease-out);
 }
 
-/* Change the dot color in dark mode */
-.dark-mode .timeline-item::before {
-    background-color: white; /* Light dot in dark mode */
-    border: 2px solid black;
+.exp__item:hover .exp__dot,
+.exp__item--expanded .exp__dot {
+    background: var(--color-accent-cyan);
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
 }
 
-.timeline-date {
-    font-weight: bold;
-    margin-bottom: 10px;
+.exp__date {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-weight: var(--font-medium);
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-2);
 }
 
-.experience-card {
-    background-color: white !important;
-    color: black !important;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+/* Card */
+.exp__card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--duration-normal) var(--ease-out);
 }
 
-.company-logo {
-    max-width: 80px;
-    max-height: 80px;
+.exp__item:hover .exp__card {
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.exp__item--expanded .exp__card {
+    border-color: var(--color-border-accent);
+}
+
+.exp__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.exp__logo {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+}
+
+.exp__company {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+}
+
+.exp__role {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: 2px;
+}
+
+.exp__location {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+/* Metrics */
+.exp__metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.exp__metric {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.1));
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    color: var(--color-accent-cyan);
+    font-family: var(--font-mono);
+}
+
+/* Skills */
+.exp__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.exp__skill-tag {
+    padding: var(--space-1) var(--space-2);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+/* Description */
+.exp__description {
+    overflow: hidden;
+}
+
+.exp__description ul {
+    padding-top: var(--space-3);
+    padding-left: var(--space-4);
+    list-style: disc;
+}
+
+.exp__description li {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-2);
+}
+
+.exp__expand-hint {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
+    display: block;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .exp__timeline {
+        padding-left: var(--space-8);
+    }
+
+    .exp__dot {
+        left: calc(-1 * var(--space-8) + 6px);
+    }
 }

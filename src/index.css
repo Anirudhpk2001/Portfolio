@@ -1,58 +1,124 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import './styles/design-tokens.css';
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap');
-
-:root {
-  /* Light Mode Colors */
-  --background-light: #FFFFFF;
-  --text-light: #000000;
-  --accent-light: #FFE5B4;
-  --shadow-light: rgba(0, 0, 0, 0.1);
-
-  /* Dark Mode Colors */
-  --background-dark: #000000;
-  --text-dark: #FFFFFF;
-  --accent-dark: #FF6F61;
-  --shadow-dark: rgba(255, 255, 255, 0.1);
+/* ===== GLOBAL RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Light Mode Styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  background-color: #FFFAED;
-  color: var(--text-light);
-  font-family: 'Roboto', sans-serif;
-}
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: var(--leading-normal);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-
-
-/* Add Padding to Navbar Brand */
-.navbar-brand {
-  padding: 10px 15px; /* Adds padding around brand */
-  font-size: 1.75rem; 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
 }
-.custom-navbar {
-  position: fixed;  /* Ensures the navbar remains fixed */
-  top: 0;
-  left: 0;
+
+a {
+  color: var(--color-accent-cyan);
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+a:hover {
+  color: var(--color-accent-violet);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container {
   width: 100%;
-  z-index: 1000;
-  background: white; /* Ensures navbar remains visible */
-  transition: all 0.3s ease-in-out;
-  padding: 15px 20px; /* Adjust top-bottom and left-right padding */
-  height: 80px; /* Increase height */
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-inline: var(--space-6);
 }
 
-/* Shadow effect when scrolling */
-.navbar-shadow {
-  box-shadow: 0px 6px 10px var(--shadow-light); /* Use CSS variable */
-  transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+.container-narrow {
+  max-width: var(--container-narrow);
 }
 
-.dark-mode .navbar-shadow {
-  box-shadow: 0px 6px 10px var(--shadow-dark); /* Change shadow in dark mode */
+.section {
+  padding-block: var(--section-padding);
 }
 
+.section-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  text-align: center;
+  margin-bottom: var(--space-12);
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text {
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: rgba(0, 212, 255, 0.25);
+  color: var(--color-text-primary);
+}
